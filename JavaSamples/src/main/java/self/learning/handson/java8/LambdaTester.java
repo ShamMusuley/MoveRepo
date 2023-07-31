@@ -9,7 +9,11 @@ package self.learning.handson.java8;
  * @author DT234016
  */
 public class LambdaTester {
-
+/*
+Note: It is important to emphasize that a lambda expression can use and modify
+an instance variable from its invoking class. It just can’t use a local variable
+of its enclosing scope unless that variable is effectively final.  
+*/
   public static void main(String args[]) {
     // Lambda Expression sample.
     LambdaTester tester = new LambdaTester();

@@ -68,7 +68,14 @@ allMatch(), noneMatch(), findFirst(), findAny()
     System.out.println("---------------------- Using Java 8: ----------------------");
     System.out.println("List: " + strings);
 
-    count = strings.stream().filter(string -> string.isEmpty()).count();
+    count = strings.stream().filter(String :: isEmpty).count();
+/*
+The method references can only be used to replace a single method of the lambda
+    expression. A code is more clear and short if one uses a lambda expression
+    rather than using an anonymous class and one can use method reference
+    rather than using a single function lambda expression to achieve the same.
+    In general, one doesn’t have to pass arguments to method references.    
+*/
     System.out.println("Empty Strings: " + count);
 
     count = strings.stream().filter(string -> string.length() == 3).count();
@@ -95,7 +102,7 @@ allMatch(), noneMatch(), findFirst(), findAny()
     random.ints().limit(10).sorted().forEach(System.out::println);
 
     //parallel processing
-    count = strings.parallelStream().filter(string -> string.isEmpty()).count();
+    count = strings.parallelStream().filter(String :: isEmpty).count();
     System.out.println("Empty Strings using parallel Stream: " + count);
   }
 
